@@ -21,10 +21,10 @@ htmlString += student[0].outerHTML;
 htmlString += '</div>';
 
 //Add the graphs
-htmlString += '<div style= "width:80%; margin: 0 auto;" >';
+htmlString += '<div style= "width:90%; margin: 0 auto;" >';
 for(var i = 0; i < graphs.length; i++){
   //Float three graphs next to each other
-  htmlString += '<div style = "float: left; width: 45%; margin: 30 auto">';
+  htmlString += '<div style = "float: left; width: 40%; margin: 30px auto">';
   htmlString += titles[i+1].outerHTML;
   htmlString += graphs[i].outerHTML;
   htmlString += '</div>';
