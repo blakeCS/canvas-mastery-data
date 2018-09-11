@@ -16,10 +16,10 @@ htmlString += student[0].outerHTML;
 htmlString += '</div>';
 
 //Add the graphs
-htmlString += '<div style= "width:80%"">';
+htmlString += '<div>';
 for(var i = 0; i < graphs.length; i++){
   //Float three graphs next to each other
-  htmlString += '<div style = "float: left; width: 30%">';
+  htmlString += '<div>';
   htmlString += titles[i+1].outerHTML;
   htmlString += graphs[i].outerHTML;
   htmlString += '</div>';
