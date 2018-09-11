@@ -25,7 +25,7 @@ htmlString += '<div style= "width:90%; margin:0 auto; overflow: auto; background
 for(var i = 0; i < graphs.length; i++){
   
   //If the outcome has been assessed, include it.
-  if(graphs[i].get(".mastery-details")[0].innerText != 'No Score Yet'){
+  if(graphs[i].get(".mastery-details")[0].innerText != 'No score yet'){
     //Include the graphs in the string.  Two columns.
     htmlString += '<div style = "float: left; width: 42%; padding: 0px 20px 0px 20px; margin: 0 1.5%">';
     htmlString += titles[i+1].outerHTML;
