@@ -24,7 +24,7 @@ htmlString += '</div>';
 htmlString += '<div style= "width:80%; margin: 0 auto;" >';
 for(var i = 0; i < graphs.length; i++){
   //Float three graphs next to each other
-  htmlString += '<div style = "float: left; width: 30%; margin: 20px, 20px">';
+  htmlString += '<div style = "float: left; width: 45%; margin: 30 auto">';
   htmlString += titles[i+1].outerHTML;
   htmlString += graphs[i].outerHTML;
   htmlString += '</div>';
