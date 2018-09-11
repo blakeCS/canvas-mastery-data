@@ -12,8 +12,8 @@ var htmlString = '<style type="text/css"> body { font-size: 11.25px; font-family
 
 //Add a titles
 htmlString += '<div style="text-align:center">';
-htmlString += titles[0];
-htmlString += student[0];
+htmlString += titles[0].outerHTML;
+htmlString += student[0].outerHTML;
 htmlString += '</div>';
 
 //Add the graphs
