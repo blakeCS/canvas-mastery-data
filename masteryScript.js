@@ -2,7 +2,7 @@ var element = document.createElement("script");
 element.src= "https://canderegg.gitlab.io/bantam-js/js/bantam-1.2.min.js";
 document.body.appendChild(element);
 
-var htmlstring = "";
+var htmlString = "";
 
 //Get the titles of each objective and the graphs to correspond.  Titles[0] is the course.
 var student = $bt.get(".ic-Action-header__Heading");
