@@ -30,7 +30,7 @@ for(var i = 0; i < graphs.length; i++){
     htmlString += '<div style = "float: left; width: 43.5%; padding: 10px 1.5%; margin: 15px 1.5%; border: 1px solid #000; border-radius: 8px; min-height: 370px; page-break-inside: avoid;">';
     htmlString += titles[i+1].outerHTML;
     htmlString += '<br>';
-    htmlString += graphs[i].outerHTML;
+    htmlString += graphs[i].outerHTML.replace('<svg width="422" height="250" aria-hidden="true">','<svg width="320" height="175" aria-hidden="true" viewBox="0 0 422 250">');
     htmlString += '</div>';
   }
 }
