@@ -39,3 +39,6 @@ htmlString += '</div>';
 
 //Use the HTML string to make a pretty window
 document.body.innerHTML = htmlString;
+
+//Print it
+window.print();
