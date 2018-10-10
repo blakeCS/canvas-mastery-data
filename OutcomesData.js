@@ -40,7 +40,7 @@ var collectData = function() {
     htmlString += '<div style = "float: left; width: 43.5%; padding: 10px 1.5%; margin: 15px 1.5%; border: 1px solid #000; border-radius: 8px; min-height: 370px; page-break-inside: avoid;">';
 
     window.data[i] = {}; 
-    window.data[i].name = outcomes[i].innerHTML];
+    window.data[i].name = outcomes[i].innerHTML;
     window.data[i].data = [];
     var scores = details[i].get(".score");
     //Include the info in the string.
