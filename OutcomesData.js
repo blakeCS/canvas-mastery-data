@@ -44,8 +44,9 @@ var collectData = function() {
     //Include the info in the string.
     for(var j = 0; j < scores.length; j++){
       htmlString += scores[j].innerHTML;
+      htmlString += '<t>';
     }
-    htmlString += '<br>';
+
     htmlString += '</div>';
   }
 
