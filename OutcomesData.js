@@ -59,8 +59,10 @@ var collectData = function() {
   //Use the HTML string to make a pretty window
   var div = document.createElement('div');
   div.innerHTML = htmlString;
+  while (document.body.firstChild) {
+    document.removeChild(myNode.firstChild);
+  }
   document.body.appendChild(div);
-
 }
 
 loadScript("https://canderegg.gitlab.io/bantam-js/js/bantam-1.2.min.js", function() {
