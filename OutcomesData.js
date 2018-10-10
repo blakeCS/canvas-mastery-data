@@ -60,7 +60,7 @@ var collectData = function() {
   var div = document.createElement('div');
   div.innerHTML = htmlString;
   while (document.body.firstChild) {
-    document.removeChild(myNode.firstChild);
+    document.removeChild(document.body.firstChild);
   }
   document.body.appendChild(div);
 }
