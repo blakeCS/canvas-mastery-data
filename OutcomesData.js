@@ -45,7 +45,7 @@ var collectData = function() {
     var scores = details[i].get(".score");
     //Include the info in the string.
     for(var j = 0; j < scores.length; j++){
-      window.data[i].data[j] = float(scores[j].innerHTML);
+      window.data[i].data[j] = +scores[j].innerHTML;
     }
     
     htmlString += '<canvas id="chart' + i + '" width="800" height="400"></canvas>';
