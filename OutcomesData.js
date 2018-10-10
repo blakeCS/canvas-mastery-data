@@ -35,17 +35,20 @@ var collectData = function() {
 
   //For each one, look at the scores
   htmlString += '<div style= "width:90%; margin:0 auto; overflow: auto; background-color: #f3ffea; border-radius: 8px;" >';
+  window.data = [];
   for(var i = 0; i < details.length; i++){
     htmlString += '<div style = "float: left; width: 43.5%; padding: 10px 1.5%; margin: 15px 1.5%; border: 1px solid #000; border-radius: 8px; min-height: 370px; page-break-inside: avoid;">';
 
-    htmlString += outcomes[i].innerHTML;
-    htmlString += '<br><br>';
+    window.data[i] = {}; 
+    window.data[i].name = outcomes[i].innerHTML];
+    window.data[i].data = [];
     var scores = details[i].get(".score");
     //Include the info in the string.
     for(var j = 0; j < scores.length; j++){
-      htmlString += scores[j].innerHTML;
-      htmlString += '<br>';
+      window.data[i].data[j] = float(scores[j].innerHTML);
     }
+    
+    htmlString += '<canvas id="chart' + i + " width="800" height="400"></canvas>'
 
     htmlString += '</div>';
   }
@@ -54,9 +57,12 @@ var collectData = function() {
   htmlString += '</div>';
 
   //Use the HTML string to make a pretty window
-  document.body.innerHTML = htmlString;
-
+  var div = document.createElement('div');
+  div.innerHTML = htmlString;
+  document.body.appendChild(div);
 
 }
 
-loadScript("https://canderegg.gitlab.io/bantam-js/js/bantam-1.2.min.js", collectData);
+loadScript("https://canderegg.gitlab.io/bantam-js/js/bantam-1.2.min.js", function() {
+  loadScript("https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.js", collectData); 
+});
