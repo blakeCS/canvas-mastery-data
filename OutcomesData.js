@@ -10,6 +10,11 @@ function loadScript(url, callback) {
 }
 
 var collectData = function() {
+  //Click all the links to generate the graphs
+    var links = $bt.get(".show_all_artifacts_link");
+    for(var i=0; i<links.length; i++){
+        links[i].click();
+    }
 
   //Create the header for the course.
   //var student = $bt.get(".ic-Action-header__Heading");
