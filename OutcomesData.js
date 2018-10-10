@@ -39,10 +39,11 @@ var collectData = function() {
     htmlString += '<div style = "float: left; width: 43.5%; padding: 10px 1.5%; margin: 15px 1.5%; border: 1px solid #000; border-radius: 8px; min-height: 370px; page-break-inside: avoid;">';
 
     htmlString += outcomes[i].innerHTML;
+    htmlString += '<br><br>';
     var scores = details[i].get(".score");
     //Include the info in the string.
-        for(var j = 0; j < scores.length; j++){
-      htmlString += scores.innerHTML;
+    for(var j = 0; j < scores.length; j++){
+      htmlString += scores[j].innerHTML;
     }
     htmlString += '<br>';
     htmlString += '</div>';
