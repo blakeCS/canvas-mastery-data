@@ -14,7 +14,7 @@ var makeGraph = function(id, dataPoint) {
   var myChart = new Chart(ctx, {
     type: "line",
     data: {
-    	labels: dataPoint.data,
+    	labels: dataPoint.labels,
         datasets: [{
           data: dataPoint.data,
           lineTension: 0,
@@ -79,10 +79,14 @@ var collectData = function() {
     window.data[i].name = outcomes[i].innerHTML;
     window.data[i].data = [];
     window.data[i].labels = [];
+    //Get Scores
     var scores = details[i].get(".score");
+    //Get Names of Assignments
+    var assignmentNames = details[i].get(".title");
     //Include the info in the string.
     for(var j = 0; j < scores.length; j++){
       window.data[i].data[j] = +scores[j].innerHTML;
+      window.data[i].labels[j] = assignmentNames[j].innerHTML.subString(assignmentNames[j].innerHTML.indexOf(',')+2);
     }
     
     htmlString += '<canvas id="chart' + i + '" style="width:100%;height:250px;"></canvas>';
