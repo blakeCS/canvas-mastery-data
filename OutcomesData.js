@@ -47,7 +47,8 @@ var makeGraph = function(id, dataPoint) {
       legend: { display:false },
       title: {
         display:true,
-        text: dataPoint.name
+        text: dataPoint.name,
+        lineHeight: 1
       },
       tooltips: {
          callbacks: {
