@@ -32,7 +32,7 @@ var makeGraph = function(id, dataPoint) {
           ticks: {
             beginAtZero:true,
             max:dataPoint.possible,
-            stepSize: 0.25
+            stepSize: 0.5
           }
         }],
         xAxes: [{
