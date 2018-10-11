@@ -87,7 +87,6 @@ var collectData = function() {
   htmlString += '<div style= "width:90%; margin:0 auto; overflow: auto; background-color: #f3ffea; border-radius: 8px;" >';
   window.data = [];
   for(var i = 0; i < details.length; i++){
-    htmlString += '<div style = "float: left; width: 43.5%; padding: 10px 1.5%; margin: 15px 1.5%; border: 1px solid #000; border-radius: 8px; min-height: 370px; page-break-inside: avoid;">';
     
     window.data[i] = {}; 
     window.data[i].name = outcomes[i].innerHTML;
@@ -105,9 +104,12 @@ var collectData = function() {
       window.data[i].labels[j] = "Assignment" + (j+1);
     }
     
-    htmlString += '<canvas id="chart' + i + '" style="width:90%;height:300px;"></canvas>';
-    
-    htmlString += '</div>';
+    //Create HTML String for this piece of data if it exists
+    if(window.data[i].attempts !=0){
+      htmlString += '<div style = "float: left; width: 43.5%; padding: 10px 1.5%; margin: 15px 1.5%; border: 1px solid #000; border-radius: 8px; min-height: 370px; page-break-inside: avoid;">'
+      htmlString += '<canvas id="chart' + i + '" style="width:90%;height:300px;"></canvas>';
+      htmlString += '</div>';
+    }
   }
   
   //Close the div formatting the width
