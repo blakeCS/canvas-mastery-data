@@ -105,7 +105,7 @@ var collectData = function() {
   //For each one, look at the scores
   htmlString += '<div style= "width:90%; margin:0 auto; overflow: auto; background-color: #f3ffea; border-radius: 8px;" >';
   window.data = [];
-  for(var i = 0; i < details.length; i++){
+  for(var i = 0; i < outcomes.length; i++){
     
     window.data[i] = {}; 
     window.data[i].name = outcomes[i].innerHTML;
@@ -121,8 +121,10 @@ var collectData = function() {
     var assignmentNames = details[i].get(".title");
     for(var j = 0; j < scores.length; j++){
       window.data[i].data[j] = +scores[j].innerHTML;
+      if(window.data[i].attempts !=0){
       var temp = assignmentNames[j].innerHTML.indexOf(',')+2;
       window.data[i].labels[j] = assignmentNames[j].innerHTML.substring(temp);
+      }
       //window.data[i].labels[j] = "Assignment" + (j+1);
     }
     
