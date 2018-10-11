@@ -45,7 +45,9 @@ var makeGraph = function(id, dataPoint) {
 
 var showGraphs = function() {
   for (var i=0; i<window.data.length; i++) {
-    makeGraph('chart' + i, data[i]);
+    if(window.data.attempts[i] !=0){
+      makeGraph('chart' + i, data[i]);
+    }
   }
 };
 
@@ -64,6 +66,8 @@ var collectData = function() {
   
   //Get the titles of each outcome in a list
   var outcomes = $bt.get(".short_description");
+  //Get the number of assignments for each outcome
+  var attempts = +$bt.get(".attempts");
   
   //Create a list of artifact details for each objective
   var details = $bt.get(".artifact_details");
@@ -90,6 +94,7 @@ var collectData = function() {
     window.data[i].data = [];
     window.data[i].labels = [];
     window.data[i].possible = +details[i].get(".possible")[0].innerHTML;
+    window.data[i].attempts = +attempts[i].innerHTML.substring(0,1);
     //Get Scores
     var scores = details[i].get(".score");
     //Get Possible Points for this Assignment
