@@ -91,8 +91,8 @@ var collectData = function() {
   //Create a list of artifact details for each objective
   var details = $bt.get(".artifact_details");  
   //Get Names of the student
-  var temp = details[0].get(".title");
-  var studentName = assignmentNames[0].innerHTML.substring(0, assignmentNames[0].innerHTML.indexOf(','));
+  var temp = details[i].get(".title");
+  var studentName = temp[0].innerHTML.substring(0, temp[0].innerHTML.indexOf(','));
   
   //Add a title at the top of the page inc. student name
   htmlString += '<div style="text-align:center; font-size:24px; margin: 40px">';
