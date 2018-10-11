@@ -80,7 +80,7 @@ var collectData = function() {
     window.data[i].name = outcomes[i].innerHTML;
     window.data[i].data = [];
     window.data[i].labels = [];
-    window.data[i].possible = +details[i].get(".possible").innerHTML;
+    window.data[i].possible = +details[i].get(".possible")[0].innerHTML;
     //Get Scores
     var scores = details[i].get(".score");
     //Get Names of Assignments
