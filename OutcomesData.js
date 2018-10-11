@@ -26,7 +26,8 @@ var makeGraph = function(id, dataPoint) {
       scales: {
         yAxes: [{
           ticks: {
-            beginAtZero:true
+            beginAtZero:true,
+            max:dataPoint.possible
           }
         }]
       },
@@ -79,10 +80,12 @@ var collectData = function() {
     window.data[i].name = outcomes[i].innerHTML;
     window.data[i].data = [];
     window.data[i].labels = [];
+    window.data[i].possible = +details[i].get(".possible");
     //Get Scores
     var scores = details[i].get(".score");
     //Get Names of Assignments
     var assignmentNames = details[i].get(".title");
+    //Get Possible Points for this Assignment
     //Include the info in the string.
     for(var j = 0; j < scores.length; j++){
       window.data[i].data[j] = +scores[j].innerHTML;
