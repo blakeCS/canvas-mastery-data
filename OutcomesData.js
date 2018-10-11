@@ -94,7 +94,7 @@ var collectData = function() {
     window.data[i].data = [];
     window.data[i].labels = [];
     window.data[i].possible = +details[i].get(".possible")[0].innerHTML;
-    window.data[i].attempts = +attempts[0].innerText.substring(0, attempts[0].innerText.indexOf(" "));
+    window.data[i].attempts = +attempts[i].innerText.substring(0, attempts[i].innerText.indexOf(" "));
     //Get Scores
     var scores = details[i].get(".score");
     //Get Possible Points for this Assignment
