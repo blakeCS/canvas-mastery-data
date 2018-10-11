@@ -18,9 +18,12 @@ var makeGraph = function(id, dataPoint) {
       datasets: [{
         data: dataPoint.data,
         lineTension: 0,
+        pointBorderColor: "rgba(0, 0, 0, .8)",
         pointBackgroundColor: "rgba(5, 115, 200, 1)",
         backgroundColor: ["rgba(75, 192, 192, 0.2)"],
-        borderWidth: 1,
+        pointBorderWidth: 1,
+        borderWidth: 5,
+        pointRadius: 5
       }]
     },
     options: {
@@ -34,10 +37,10 @@ var makeGraph = function(id, dataPoint) {
         xAxes: [{
           ticks: { autoSkip : false,
           callback: function(t) {
-                  		var maxLabelLength = 3;
-                  		if (t.length > maxLabelLength) return t.substr(0, maxLabelLength) + '...';
-                  		else return t;
-               }       
+            var maxLabelLength = 3;
+              if (t.length > maxLabelLength) return t.substr(0, maxLabelLength) + '...';
+              else return t;
+           }       
           }
         }]
       },
