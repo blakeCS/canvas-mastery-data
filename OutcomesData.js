@@ -9,6 +9,42 @@ function loadScript(url, callback) {
   document.body.appendChild(element);
 }
 
+var makeGraph = function(id, dataPoint) {
+  var ctx = document.getElementById(id).getContext("2d");
+  var myChart = new Chart(ctx, {
+    type: "line",
+    data: {
+    	labels: dataPoint.data,
+        datasets: [{
+          data: dataPoint.data,
+          lineTension: 0,
+          backgroundColor: ["rgba(75, 192, 192, 0.2)"],
+          borderWidth: 1,
+        }]
+    },
+    options: {
+      scales: {
+        yAxes: [{
+          ticks: {
+            beginAtZero:true
+          }
+        }]
+      },
+      legend: { display:false },
+      title: {
+        display:true,
+        text: dataPoint.name
+      }
+    }
+  });
+};
+
+var showGraphs = function() {
+  for (var i=0; i<window.data.length; i++) {
+    makeGraph('chart' + i, data[i]);
+  }
+};
+
 var collectData = function() {
   //Click all the links to generate the graphs
     var links = $bt.get(".show_all_artifacts_link");
@@ -42,6 +78,7 @@ var collectData = function() {
     window.data[i] = {}; 
     window.data[i].name = outcomes[i].innerHTML;
     window.data[i].data = [];
+    window.data[i].labels = [];
     var scores = details[i].get(".score");
     //Include the info in the string.
     for(var j = 0; j < scores.length; j++){
@@ -59,6 +96,9 @@ var collectData = function() {
   //Use the HTML string to make a pretty window
   var div = document.createElement('div');
   div.innerHTML = htmlString;
+  div.onreadystatechange = showGraphs;
+  div.onload = showGraphs;
+  
   while (document.body.firstChild) {
     document.body.removeChild(document.body.firstChild);
   }
