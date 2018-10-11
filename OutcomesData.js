@@ -40,7 +40,6 @@ var makeGraph = function(id, dataPoint) {
 };
 
 var showGraphs = function() {
-  alert('test');
   for (var i=0; i<window.data.length; i++) {
     makeGraph('chart' + i, data[i]);
   }
@@ -97,8 +96,6 @@ var collectData = function() {
   //Use the HTML string to make a pretty window
   var div = document.createElement('div');
   div.innerHTML = htmlString;
-  div.onreadystatechange = showGraphs;
-  div.onload = showGraphs;
   
   while (document.body.firstChild) {
     document.body.removeChild(document.body.firstChild);
