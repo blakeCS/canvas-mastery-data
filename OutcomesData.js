@@ -45,7 +45,7 @@ var makeGraph = function(id, dataPoint) {
 
 var showGraphs = function() {
   for (var i=0; i<window.data.length; i++) {
-    if(window.data.attempts[i] !=0){
+    if(window.data[i].attempts !=0){
       makeGraph('chart' + i, data[i]);
     }
   }
