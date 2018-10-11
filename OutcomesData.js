@@ -23,7 +23,7 @@ var makeGraph = function(id, dataPoint) {
         backgroundColor: ["rgba(75, 192, 192, 0.2)"],
         pointBorderWidth: 1,
         borderWidth: 5,
-        pointRadius: 5
+        pointRadius: 3
       }]
     },
     options: {
@@ -31,7 +31,8 @@ var makeGraph = function(id, dataPoint) {
         yAxes: [{
           ticks: {
             beginAtZero:true,
-            max:dataPoint.possible
+            max:dataPoint.possible,
+            stepSize: 0.25
           }
         }],
         xAxes: [{
