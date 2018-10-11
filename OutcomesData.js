@@ -40,6 +40,7 @@ var makeGraph = function(id, dataPoint) {
 };
 
 var showGraphs = function() {
+  alert('test');
   for (var i=0; i<window.data.length; i++) {
     makeGraph('chart' + i, data[i]);
   }
