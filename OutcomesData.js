@@ -119,8 +119,10 @@ var collectData = function() {
     //Include the info in the string.
     for(var j = 0; j < scores.length; j++){
       window.data[i].data[j] = +scores[j].innerHTML;
-      var temp = assignmentNames[j].innerHTML.indexOf(',')+2
-      window.data[i].labels[j] = assignmentNames[j].innerHTML.substring(temp);
+      if(window.data[i].attempts !=0){
+        var temp = assignmentNames[j].innerHTML.indexOf(',')+2
+        window.data[i].labels[j] = assignmentNames[j].innerHTML.substring(temp);
+      }
       //window.data[i].labels[j] = "Assignment" + (j+1);
     }
     
