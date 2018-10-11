@@ -88,6 +88,16 @@ var collectData = function() {
   //Get the number of assignments for each outcome
   var attempts = $bt.get(".attempts");
   
+  //Remove all outcomes that have not been attempted
+  outcomes2 = []; 
+  attempts2=[];
+  for(i = 0; i<attempts.length; i++){
+    if (attempts[i].innerText.substring(0, attempts[i].innerText.indexOf(" ")) !== "0"){
+      outcomes2.push(outcomes[i]);
+      attempts2.push(attempts[i]);
+    }
+  }
+  
   //Create a list of artifact details for each objective
   var details = $bt.get(".artifact_details");  
   //Get Names of the student
@@ -105,14 +115,14 @@ var collectData = function() {
   //For each one, look at the scores
   htmlString += '<div style= "width:90%; margin:0 auto; overflow: auto; background-color: #f3ffea; border-radius: 8px;" >';
   window.data = [];
-  for(var i = 0; i < outcomes.length; i++){
+  for(var i = 0; i < outcomes2.length; i++){
     
     window.data[i] = {}; 
-    window.data[i].name = outcomes[i].innerHTML;
+    window.data[i].name = outcomes2[i].innerHTML;
     window.data[i].data = [];
     window.data[i].labels = [];
     window.data[i].possible = +details[i].get(".possible")[0].innerHTML;
-    window.data[i].attempts = +attempts[i].innerText.substring(0, attempts[i].innerText.indexOf(" "));
+    window.data[i].attempts = +attempts2[i].innerText.substring(0, attempts[i].innerText.indexOf(" "));
     //Get Scores
     var scores = details[i].get(".score");
     //Get Possible Points for this Assignment
@@ -121,19 +131,15 @@ var collectData = function() {
     var assignmentNames = details[i].get(".title");
     for(var j = 0; j < scores.length; j++){
       window.data[i].data[j] = +scores[j].innerHTML;
-      if(window.data[i].attempts !=0){
       var temp = assignmentNames[j].innerHTML.indexOf(',')+2;
       window.data[i].labels[j] = assignmentNames[j].innerHTML.substring(temp);
-      }
       //window.data[i].labels[j] = "Assignment" + (j+1);
     }
     
     //Create HTML String for this piece of data if it exists
-    if(window.data[i].attempts !=0){
       htmlString += '<div style = "float: left; width: 43.5%; padding: 10px 1.5%; margin: 15px 1.5%; border: 1px solid #000; border-radius: 8px; min-height: 370px; page-break-inside: avoid;">'
       htmlString += '<canvas id="chart' + i + '" style="width:90%;height:300px;"></canvas>';
       htmlString += '</div>';
-    }
   }
   
   //Close the div formatting the width
