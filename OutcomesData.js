@@ -93,7 +93,7 @@ var collectData = function() {
     for(var j = 0; j < scores.length; j++){
       window.data[i].data[j] = +scores[j].innerHTML;
       //window.data[i].labels[j] = assignmentNames[j].innerHTML.substring(assignmentNames[j].innerHTML.indexOf(',')+2);
-      window.data[i].labels[j] = "Assignment" + j;
+      window.data[i].labels[j] = "Assignment" + (j+1);
     }
     
     htmlString += '<canvas id="chart' + i + '" style="width:100%;height:250px;"></canvas>';
