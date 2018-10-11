@@ -82,14 +82,19 @@ var collectData = function() {
   var outcomes = $bt.get(".short_description");
   //Get the number of assignments for each outcome
   var attempts = $bt.get(".attempts");
+  //Get the average score for each outcome
+  var average = $bt.get(".avg_percent");
   
   //Remove all outcomes that have not been attempted
   outcomes2 = []; 
-  attempts2=[];
+  attempts2 = [];
+  average2 = [];
+  
   for(i = 0; i<attempts.length; i++){
     if (attempts[i].innerText.substring(0, attempts[i].innerText.indexOf(" ")) !== "0"){
       outcomes2.push(outcomes[i]);
       attempts2.push(attempts[i]);
+      average2.push(average[i]);
     }
   }
   
@@ -114,6 +119,7 @@ var collectData = function() {
     
     window.data[i] = {}; 
     window.data[i].name = outcomes2[i].innerHTML;
+    window.data[i].average = average2[i].innerHTML;
     window.data[i].data = [];
     window.data[i].labels = [];
     window.data[i].possible = +details[i].get(".possible")[0].innerHTML;
@@ -135,6 +141,7 @@ var collectData = function() {
       htmlString += '<div style = "float: left; width: 43.5%; padding: 10px 1.5%; margin: 15px 1.5%; border: 1px solid #000; border-radius: 8px; min-height: 370px; page-break-inside: avoid;">'
       htmlString += '<h3>' + window.data[i].name + '</h3>';
       htmlString += '<canvas id="chart' + i + '" style="width:90%;height:200px;"></canvas>';
+      htmlString += '<h2> Outcome Average: ' + window.data[i].average + </h2>';
       htmlString += '</div>';
   }
   
