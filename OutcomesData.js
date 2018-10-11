@@ -87,12 +87,12 @@ var collectData = function() {
     //Get Scores
     var scores = details[i].get(".score");
     //Get Names of Assignments
-    var assignmentNames = details[i].get(".title");
+    //var assignmentNames = details[i].get(".title");
     //Get Possible Points for this Assignment
     //Include the info in the string.
     for(var j = 0; j < scores.length; j++){
       window.data[i].data[j] = +scores[j].innerHTML;
-      window.data[i].labels[j] = assignmentNames[j].innerHTML.substring(assignmentNames[j].innerHTML.indexOf(',')+2);
+      //window.data[i].labels[j] = assignmentNames[j].innerHTML.substring(assignmentNames[j].innerHTML.indexOf(',')+2);
     }
     
     htmlString += '<canvas id="chart' + i + '" style="width:100%;height:250px;"></canvas>';
