@@ -48,7 +48,7 @@ var collectData = function() {
       window.data[i].data[j] = +scores[j].innerHTML;
     }
     
-    htmlString += '<canvas id="chart' + i + '" width="800" height="400"></canvas>';
+    htmlString += '<canvas id="chart' + i + '" style="width:100%;height:250px;"></canvas>';
 
     htmlString += '</div>';
   }
