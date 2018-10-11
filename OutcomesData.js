@@ -119,8 +119,8 @@ var collectData = function() {
     //Include the info in the string.
     for(var j = 0; j < scores.length; j++){
       window.data[i].data[j] = +scores[j].innerHTML;
-      window.data[i].labels[j] = assignmentNames[j].innerHTML.substring(assignmentNames[j].innerHTML.indexOf(',')+2);
-      //window.data[i].labels[j] = "Assignment" + (j+1);
+      //window.data[i].labels[j] = assignmentNames[j].innerHTML.substring(assignmentNames[j].innerHTML.indexOf(',')+2);
+      window.data[i].labels[j] = "Assignment" + (j+1);
     }
     
     //Create HTML String for this piece of data if it exists
