@@ -104,6 +104,8 @@ var collectData = function() {
     document.body.removeChild(document.body.firstChild);
   }
   document.body.appendChild(div);
+  
+  showGraphs();
 }
 
 loadScript("https://canderegg.gitlab.io/bantam-js/js/bantam-1.2.min.js", function() {
