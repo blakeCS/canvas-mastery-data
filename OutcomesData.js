@@ -18,6 +18,7 @@ var makeGraph = function(id, dataPoint) {
       datasets: [{
         data: dataPoint.data,
         lineTension: 0,
+        pointBackgroundColor: "rgba(5, 115, 200, 1)",
         backgroundColor: ["rgba(75, 192, 192, 0.2)"],
         borderWidth: 1,
       }]
