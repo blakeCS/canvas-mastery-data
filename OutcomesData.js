@@ -29,7 +29,10 @@ var makeGraph = function(id, dataPoint) {
             beginAtZero:true,
             max:dataPoint.possible
           }
-        }]
+        }],
+        xAxes: [{
+          ticks: { autoSkip : false}
+			  }]
       },
       legend: { display:false },
       title: {
