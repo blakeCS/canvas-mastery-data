@@ -121,10 +121,8 @@ var collectData = function() {
     var assignmentNames = details[i].get(".title");
     for(var j = 0; j < scores.length; j++){
       window.data[i].data[j] = +scores[j].innerHTML;
-      if(window.data[i].attempts !=0){
-        var temp = assignmentNames[j].innerHTML.indexOf(',')+2;
-        window.data[i].labels[j] = assignmentNames[j].innerHTML.substring(temp);
-      }
+      var temp = assignmentNames[j].innerHTML.indexOf(',')+2;
+      window.data[i].labels[j] = assignmentNames[j].innerHTML.substring(temp);
       //window.data[i].labels[j] = "Assignment" + (j+1);
     }
     
