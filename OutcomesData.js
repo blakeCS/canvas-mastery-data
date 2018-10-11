@@ -105,7 +105,7 @@ var collectData = function() {
       window.data[i].labels[j] = "Assignment" + (j+1);
     }
     
-    htmlString += '<canvas id="chart' + i + '" style="width:100%;height:350px;"></canvas>';
+    htmlString += '<canvas id="chart' + i + '" style="width:90%;height:300px;"></canvas>';
     
     htmlString += '</div>';
   }
