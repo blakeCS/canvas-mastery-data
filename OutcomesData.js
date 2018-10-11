@@ -31,13 +31,26 @@ var makeGraph = function(id, dataPoint) {
           }
         }],
         xAxes: [{
-          ticks: { autoSkip : false}
+          ticks: { autoSkip : false,
+          callback: function(t) {
+                  		var maxLabelLength = 3;
+                  		if (t.length > maxLabelLength) return t.substr(0, maxLabelLength) + '...';
+                  		else return t;
+               }       
+          }
         }]
       },
       legend: { display:false },
       title: {
         display:true,
         text: dataPoint.name
+      },
+      tooltips: {
+         callbacks: {
+            title: function(t, d) {
+               return d.labels[t[0].index];
+            }
+         }
       }
     }
   });
@@ -100,8 +113,8 @@ var collectData = function() {
     //Include the info in the string.
     for(var j = 0; j < scores.length; j++){
       window.data[i].data[j] = +scores[j].innerHTML;
-      //window.data[i].labels[j] = assignmentNames[j].innerHTML.substring(assignmentNames[j].innerHTML.indexOf(',')+2);
-      window.data[i].labels[j] = "Assignment" + (j+1);
+      window.data[i].labels[j] = assignmentNames[j].innerHTML.substring(assignmentNames[j].innerHTML.indexOf(',')+2);
+      //window.data[i].labels[j] = "Assignment" + (j+1);
     }
     
     //Create HTML String for this piece of data if it exists
