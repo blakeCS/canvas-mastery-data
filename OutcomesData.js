@@ -89,9 +89,9 @@ var collectData = function() {
   var attempts = $bt.get(".attempts");
   
   //Create a list of artifact details for each objective
-  var details = $bt.get(".artifact_details");
-  //Get Names of Assignments and the student
-  var assignmentNames = details[i].get(".title");
+  var details = $bt.get(".artifact_details");  
+  //Get Names of the student
+  var temp = details[0].get(".title");
   var studentName = assignmentNames[0].innerHTML.substring(0, assignmentNames[0].innerHTML.indexOf(','));
   
   //Add a title at the top of the page inc. student name
@@ -117,6 +117,8 @@ var collectData = function() {
     var scores = details[i].get(".score");
     //Get Possible Points for this Assignment
     //Include the info in the string.
+    //Get Names of Assignments
+    var assignmentNames = details[i].get(".title");
     for(var j = 0; j < scores.length; j++){
       window.data[i].data[j] = +scores[j].innerHTML;
       if(window.data[i].attempts !=0){
